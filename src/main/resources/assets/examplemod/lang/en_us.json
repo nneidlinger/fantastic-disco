@@ -1,3 +1,6 @@
 {
-  "item.examplemod.example_item": "Example Item"
+  "item.examplemod.example_item": "Example Item",
+  "item.examplemod.example_item_two": "Example Item Two",
+
+  "creativetab.example_tab": "Example Creative Tab"
 }

@@ -1,5 +1,7 @@
 package com.example.examplemod;
 
+import com.example.examplemod.item.ModCreativeModeTabs;
+import com.example.examplemod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +43,12 @@ public class ExampleMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        // create creative mode tab(s)
+        ModCreativeModeTabs.register(modEventBus);
+
+        // register examplemod's item(s)
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -50,8 +58,10 @@ public class ExampleMod
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+        /* (NOT PART OF TUTORIAL)
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+         */
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -62,7 +72,13 @@ public class ExampleMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        // add item(s) to Minecraft's ingredient tab
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        {
+            // specify which items
+            event.accept(ModItems.EXAMPLE_ITEM);
+            event.accept(ModItems.EXAMPLE_ITEM_TWO);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
