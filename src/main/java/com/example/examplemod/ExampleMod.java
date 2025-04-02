@@ -1,5 +1,6 @@
 package com.example.examplemod;
 
+import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModCreativeModeTabs;
 import com.example.examplemod.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -42,13 +43,17 @@ public class ExampleMod
     public ExampleMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
-
+        // ======================== BEGIN CUSTOM STUFF ========================
         // create creative mode tab(s)
         ModCreativeModeTabs.register(modEventBus);
 
         // register examplemod's item(s)
         ModItems.register(modEventBus);
 
+        // register examplemod's blocks(s)
+        ModBlocks.register(modEventBus);
+
+        // ========================= END CUSTOM STUFF =========================
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -57,11 +62,6 @@ public class ExampleMod
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
-        /* (NOT PART OF TUTORIAL)
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-         */
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

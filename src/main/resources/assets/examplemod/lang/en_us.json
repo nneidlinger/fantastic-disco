@@ -2,5 +2,8 @@
   "item.examplemod.example_item": "Example Item",
   "item.examplemod.example_item_two": "Example Item Two",
 
+  "block.examplemod.example_block": "Example Block",
+  "block.examplemod.example_block_two": "Example Block Two",
+
   "creativetab.example_tab": "Example Creative Tab"
 }
