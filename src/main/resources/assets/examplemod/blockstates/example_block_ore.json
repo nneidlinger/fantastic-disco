@@ -1,0 +1,9 @@
+{
+  "variants":
+  {
+    "":
+    {
+      "model": "examplemod:block/example_block_ore"
+    }
+  }
+}

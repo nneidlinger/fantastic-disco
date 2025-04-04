@@ -5,5 +5,11 @@
   "block.examplemod.example_block": "Example Block",
   "block.examplemod.example_block_two": "Example Block Two",
 
-  "creativetab.example_tab": "Example Creative Tab"
+  "block.examplemod.example_block_ore": "Example Block Ore",
+  "block.examplemod.example_block_deepslate_ore": "Example Block Deepslate Ore",
+  "block.examplemod.example_block_nether_ore": "Example Block Nether Ore",
+  "block.examplemod.example_block_end_ore": "Example Block End Ore",
+
+  "creativetab.example_tab": "Example Creative Tab",
+  "creativetab.example_mod_ores_tab": "Example Mod Ores"
 }

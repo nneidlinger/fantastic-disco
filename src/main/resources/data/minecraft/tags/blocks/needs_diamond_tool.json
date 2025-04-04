@@ -1,0 +1,8 @@
+{
+  "values": [
+    "examplemod:example_block_ore",
+    "examplemod:example_block_deepslate_ore",
+    "examplemod:example_block_nether_ore",
+    "examplemod:example_block_end_ore"
+  ]
+}

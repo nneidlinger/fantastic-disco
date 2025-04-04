@@ -31,6 +31,18 @@ public class ModCreativeModeTabs
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> EXAMPLE_MOD_ORES =
+            CREATIVE_MODE_TABS.register("example_mod_ores_tab", () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModItems.EXAMPLE_ITEM.get()))
+                    .title(Component.translatable("creativetab.example_mod_ores_tab"))
+                    .displayItems((Parameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.EXAMPLE_BLOCK_ORE.get());
+                        pOutput.accept(ModBlocks.EXAMPLE_BLOCK_DEEPSLATE_ORE.get());
+                        pOutput.accept(ModBlocks.EXAMPLE_BLOCK_NETHER_ORE.get());
+                        pOutput.accept(ModBlocks.EXAMPLE_BLOCK_END_ORE.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus)
     {
         CREATIVE_MODE_TABS.register(eventBus);

@@ -2,10 +2,12 @@ package com.example.examplemod.block;
 
 import com.example.examplemod.ExampleMod;
 import com.example.examplemod.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -34,6 +36,39 @@ public class ModBlocks
                     () -> new Block(BlockBehaviour.Properties
                             .copy(Blocks.AMETHYST_BLOCK)
                             .sound(SoundType.AMETHYST)
+                    ));
+
+    public static final RegistryObject<Block> EXAMPLE_BLOCK_ORE =
+            registerBlock("example_block_ore",
+                    () -> new DropExperienceBlock(BlockBehaviour.Properties
+                            .copy(Blocks.STONE)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+                            ,UniformInt.of(3,5) // amt exp dropped
+                    ));
+
+    public static final RegistryObject<Block> EXAMPLE_BLOCK_DEEPSLATE_ORE =
+            registerBlock("example_block_deepslate_ore",
+                    () -> new DropExperienceBlock(BlockBehaviour.Properties
+                            .copy(Blocks.DEEPSLATE)
+                            .requiresCorrectToolForDrops()
+                            ,UniformInt.of(3,5) // amt exp dropped
+                    ));
+
+    public static final RegistryObject<Block> EXAMPLE_BLOCK_NETHER_ORE =
+            registerBlock("example_block_nether_ore",
+                    () -> new DropExperienceBlock(BlockBehaviour.Properties
+                            .copy(Blocks.NETHERRACK)
+                            .requiresCorrectToolForDrops()
+                            ,UniformInt.of(3,5) // amt exp dropped
+                    ));
+
+    public static final RegistryObject<Block> EXAMPLE_BLOCK_END_ORE =
+            registerBlock("example_block_end_ore",
+                    () -> new DropExperienceBlock(BlockBehaviour.Properties
+                            .copy(Blocks.END_STONE)
+                            .requiresCorrectToolForDrops()
+                            ,UniformInt.of(3,5) // amt exp dropped
                     ));
 
     // =========================== BEGIN Helper Functions ===========================
