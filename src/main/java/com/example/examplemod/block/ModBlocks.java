@@ -71,6 +71,14 @@ public class ModBlocks
                             ,UniformInt.of(3,5) // amt exp dropped
                     ));
 
+    // compressed cobble
+    public static final RegistryObject<Block> COMPRESSED_COBBLE_X1 =
+            registerBlock ("compressed_cobblestone",
+                    () -> new Block(BlockBehaviour.Properties
+                            .copy(Blocks.COBBLESTONE)
+                            .sound(SoundType.STONE)
+                    ));
+
     // =========================== BEGIN Helper Functions ===========================
     // creates a registry item for block and makes call to create an inventory
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
